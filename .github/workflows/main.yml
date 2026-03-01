@@ -20,4 +20,4 @@ jobs:
       - name: 部署到 GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build     # 这里填写你构建输出文件夹
+          folder: main     # 这里填写你构建输出文件夹
