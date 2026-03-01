@@ -1,0 +1,23 @@
+# .github/workflows/deploy.yml
+name: 部署到 GitHub Pages
+
+on:
+  push:
+    branches: ["main"]   # 当 main 分支有推送时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:          # 设置必要的权限
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: 拉取代码 🛎️
+        uses: actions/checkout@v4
+
+      - name: 部署到 GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build     # 这里填写你构建输出文件夹
